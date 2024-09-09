@@ -131,7 +131,6 @@ test("End to End API testing using playwright", async ({ request }) => {
         console.log(jsonPretty);
 
         const mapOfIds: number[] = responseData.map((resp: { bookingid: number; }) => {
-            console.log(resp.bookingid);
             return resp.bookingid;
         });
 
