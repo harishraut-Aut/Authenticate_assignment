@@ -49,6 +49,8 @@ test.describe(() => {
             console.log("-------------------------data--------------------")
             console.log(JSON.stringify(amazonTestData));
         });
+
+        page.close();
     })
 
     test('UI automation test for FLIPKART', async ({ page }) => {
@@ -87,17 +89,20 @@ test.describe(() => {
                 page.locator(`(//div[contains(@class,'row')]//div//div)[1]`).click()
             ]);
 
+            await highlightElement(newTab.locator(`//button[normalize-space()='Buy Now']`));
             newTab.locator(`//button[normalize-space()='Buy Now']`).click();
 
             console.log("-------------------------data--------------------")
             console.log(JSON.stringify(flipkartTestData));
         });
+
+        page.close();
     })
 
     test('Compare prices between Amazon and Flipkart', async ({ page }) => {
 
 
-        function parsePrice(priceString) {
+        function parsePrice(priceString: string) {
             return parseFloat(priceString.replace(/[^0-9.]/g, ''));
         }
 

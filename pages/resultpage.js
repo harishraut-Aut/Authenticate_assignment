@@ -31,6 +31,8 @@ exports.ResultPage = class ResultPage {
 
         this.page.bringToFront();
 
+        await highlightElement(newTab.locator('[id="buy-now-button"]'));
+
         await newTab.locator('[id="buy-now-button"]').click();
 
         return newUrl;
